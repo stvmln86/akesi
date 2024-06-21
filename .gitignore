@@ -1,0 +1,13 @@
+# macOS Junk
+.DS_Store
+
+# Python bytecode
+*.pyc
+__pycache__
+
+# Virtualenv files
+.venv
+
+# Library files
+__mypy_cache__
+__pytest_cache__
