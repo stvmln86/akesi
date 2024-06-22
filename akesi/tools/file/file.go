@@ -14,7 +14,7 @@ import (
 )
 
 // Create writes a new file with a string..
-func Create(dest, body string, mode os.FileMode) error {
+func Create(dest, body string, mode fs.FileMode) error {
 	if Exists(dest) {
 		return fmt.Errorf("cannot create file %q: already exists", dest)
 	}
@@ -42,7 +42,7 @@ func Delete(orig string) error {
 	return nil
 }
 
-// Exists returns true if a file path exists.
+// Exists returns true if a file or directory path exists.
 func Exists(orig string) bool {
 	_, err := os.Stat(orig)
 	return !errors.Is(err, fs.ErrNotExist)
