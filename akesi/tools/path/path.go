@@ -27,6 +27,14 @@ func Join(dire, name, extn string) string {
 	return filepath.Join(dire, name+extn)
 }
 
+// Match returns true if a path's file name contains a substring.
+func Match(orig, term string) bool {
+	name := Name(orig)
+	name = strings.ToLower(orig)
+	term = strings.ToLower(term)
+	return strings.Contains(name, term)
+}
+
 // Name returns a path's file name.
 func Name(orig string) string {
 	base := filepath.Base(orig)
