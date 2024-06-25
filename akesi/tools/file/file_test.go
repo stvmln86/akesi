@@ -90,7 +90,7 @@ func TestSearch(t *testing.T) {
 	orig := test.TempFile(t, "alpha.extn")
 
 	// success - true
-	ok, err := Search(orig, "ALPHA")
+	ok, err := Search(orig, "ALPH")
 	assert.True(t, ok)
 
 	// success - false
