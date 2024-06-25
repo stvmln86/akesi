@@ -20,6 +20,8 @@ type Book struct {
 
 // New returns a new Book.
 func New(dire, extn string, mode fs.FileMode) *Book {
+	dire = neat.Path(dire)
+	extn = neat.Extn(extn)
 	return &Book{dire, extn, mode}
 }
 
